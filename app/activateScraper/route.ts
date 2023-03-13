@@ -1,5 +1,9 @@
-export async function GET(request: Request) {
-    return new Response("Hello, Next.js!", {
-        status: 200,
-    });
+import { NextApiRequest } from "next";
+
+export async function POST(request: NextApiRequest) {
+    console.log("Submitting");
+
+    const search = request.body.search;
+
+    console.log("search is >>", search);
 }
