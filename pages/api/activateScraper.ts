@@ -11,6 +11,7 @@ type Data = {
 type Error = {
     error: string;
 };
+const BRIGHTLIGHT_API_KEY = "f912d8d2-7728-4c0d-bb0f-986b2804bcee";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data | Error>) {
     try {
@@ -23,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             {
                 method: "POST",
                 headers: {
-                    Authorization: `Bearer ${process.env.BRIGHTLIGHT_API_KEY}`,
+                    Authorization: `Bearer ${BRIGHTLIGHT_API_KEY}`,
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
