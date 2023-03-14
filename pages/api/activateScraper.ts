@@ -11,7 +11,7 @@ type Data = {
 type Error = {
     error: string;
 };
-const BRIGHTLIGHT_API_KEY = "f912d8d2-7728-4c0d-bb0f-986b2804bcee";
+const BRIGHTLIGHT_API_KEY = "edf01a5c-fd0d-4baa-b6e3-7ba4d4d5ea0a";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data | Error>) {
     try {
@@ -39,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
         const { collection_id, start_eta } = data;
 
-        await adminDB.collection("search").doc(collection_id).set({
+        await adminDB.collection("search").doc("collection_id").set({
             search,
             start_eta,
             status: "pending",
