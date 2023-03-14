@@ -11,6 +11,7 @@ export const Results = ({ results }: Props) => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-5 w-full  ">
             {results.map((item) => (
                 <Link
+                    target="_blank"
                     key={item.title}
                     href={item.url}
                     className="flex flex-col space-x-4 w-full bg-white rounded-lg shadow-md p-5"
